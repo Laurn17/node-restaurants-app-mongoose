@@ -118,7 +118,8 @@ describe('Restaurants API resource', function() {
       // need to have access to mutate and access `res` across
       // `.then()` calls below, so declare it here so can modify in place
       let res;
-      return chai.request(app)
+      return chai
+        .request(app)
         .get('/restaurants')
         .then(function(_res) {
           // so subsequent .then blocks can access response object
@@ -138,7 +139,8 @@ describe('Restaurants API resource', function() {
       // Strategy: Get back all restaurants, and ensure they have expected keys
 
       let resRestaurant;
-      return chai.request(app)
+      return chai
+        .request(app)
         .get('/restaurants')
         .then(function(res) {
           expect(res).to.have.status(200);
@@ -177,7 +179,8 @@ describe('Restaurants API resource', function() {
       const newRestaurant = generateRestaurantData();
       let mostRecentGrade;
 
-      return chai.request(app)
+      return chai
+        .request(app)
         .post('/restaurants')
         .send(newRestaurant)
         .then(function(res) {
@@ -230,7 +233,8 @@ describe('Restaurants API resource', function() {
 
           // make request then inspect it to make sure it reflects
           // data we sent
-          return chai.request(app)
+          return chai
+            .request(app)
             .put(`/restaurants/${restaurant.id}`)
             .send(updateData);
         })
@@ -260,7 +264,9 @@ describe('Restaurants API resource', function() {
         .findOne()
         .then(function(_restaurant) {
           restaurant = _restaurant;
-          return chai.request(app).delete(`/restaurants/${restaurant.id}`);
+          return chai
+            .request(app)
+            .delete(`/restaurants/${restaurant.id}`);
         })
         .then(function(res) {
           expect(res).to.have.status(204);
