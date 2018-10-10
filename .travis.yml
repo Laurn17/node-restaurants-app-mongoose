@@ -1,4 +1,12 @@
 language: node_js
 node_js: node
 services:
-- mongodb 
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: XlOqB8a80wQUqWFWCnUJLY0HeZrYw0hOn9ISvwxblRyHbIb27kFJJPOqyFcGVpQjgfzULeMivUa19xdiltLzNKiy3quuxgD746M3ydEjV1qLsLW8W8kyZ4IX/wicVbFhrUT59h40Z7dBVeKceeOs2ka+xTOxp2C+40RN9o9RA4XOuY4q4WcPZYfRt6vXQshwESDJ/X8iMe1mz1KiDOTx1y2b1OYVZUG7jWpVYPnJGV4oM+HshfG26A8I/FgZZfkRjX2TFdA5/gnhCLkvHQHyg7TswRUqsCxZ4co4evQjFIZNalKtACpze65vgPvc2E38/di3H8jVerKAusgs84X0QvcQmAUFkTpeULGvofKGXAF9OM/RENbjCKkKw71BCgLI78QPL0yRr173e7ededwUPC/idLQZprz6VL3UakXHiNmAcoeKOnTkPvrwPkdS0RYetdGRln/Qj+c4Wl2NcrzqXmgHcF//dxuLThX9G1N0I0a60UC2hZuNjyPbIAjqiHFz1KlGUYFgOvvmzkkC58t8EH1ZOOJ92g8yj6oJ20mFNPT5JKaFJkcwnk29DciNY5/n3gXQJ3jauDjxIiQQH8638JnQp0LhUCJJJvWjaxQ58lrwkauKKh0va999Yuz+BdqHeFGa5RIAjRq5u7HiVHFDrkvtgVBQxIL+cBDirIrFSIQ=
+  app: fathomless-sierra-38426
+  on:
+    repo: Laurn17/node-restaurants-app-mongoose
+    branch: feature/with-tests
